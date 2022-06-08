@@ -24,6 +24,7 @@ video{
     background-color: aquamarine;
     position: absolute;
     top: calc(( 100vh - 12rem ) / 2);
+    left: calc(100vw - 10rem);
 }
 .action-cont>*{
     width: 100%;
@@ -33,6 +34,7 @@ video{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .record-btn{
     background-color: red;
@@ -50,9 +52,39 @@ video{
 
 .timer-cont{
     position: absolute;
-    bottom: 10rem;
+    bottom: 4rem;
     color: white;
-    left: 2rem;
+    left: 3rem;
+}
+
+.filter-cont{
+    position: absolute;
+    background-color: rgb(196, 40, 40);
+    height: 16rem;
+    width: 5rem;
+    top: calc((100vh - 16rem)/2);
+    left: 3rem;
+}
+
+.filter{
+    height: 4rem;
+    background-image: url(https://picsum.photos/seed/picsum/200/300);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.orange{
+    background-color: #ffa50052;
+}
+.brown{
+    background-color:#a52a2a59 ;
+}
+.pink{
+    background-color:#ffc0cb57 ;
+}
+.transparent{
+    background-color: transparent;
 }
 
 
