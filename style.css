@@ -59,6 +59,9 @@ video{
     color: white;
     left: 3rem;
     z-index: 2;
+}
+
+.timer{
     display: none;
 }
 
