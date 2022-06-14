@@ -50,6 +50,7 @@ navigator.mediaDevices.getUserMedia(constraints)
 
 // click photo
 captureBtnCont.addEventListener("click",() => {
+    captureBtn.classList.add("scale-capture");
     let canvas = document.createElement("canvas");
     let tool = canvas.getContext('2d');
     canvas.width = video.videoWidth;
@@ -66,6 +67,10 @@ captureBtnCont.addEventListener("click",() => {
     let img = document.createElement("img");
     img.src = imageURL;
     document.body.append(img);
+
+    setTimeout(() =>{
+        captureBtn.classList.remove("scale-capture");
+    },510);
 });
 
 recordBtnCont.addEventListener("click",() =>{
@@ -74,12 +79,15 @@ recordBtnCont.addEventListener("click",() =>{
 
     // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
     if(shouldRecord){
+        recordBtn.classList.add("scale-record");
+
         // recording start
         recorder.start();// on calling this function 'start' event will be fired/run and scope will go to line 24. If we specify number of milliseconds in the argumnent , then after those milliseconds the 'dataavailable' event will be fired/run and will amount of recording/data is stored till that moment i.e data will be pushed to chunks array after each calling of 'dataavailable' event.
         // start timer
         startTimer();
     }
     else{
+        recordBtn.classList.remove("scale-record");
         // stop the recording
         recorder.stop();// on calling this function first 'dataavailable' event will be fired/run  and scope will go to line 28, and then 'stop' event will be fired/run and scope will go to line no 33
         // stop the timer
@@ -116,6 +124,7 @@ function startTimer(){
     }
 
     timerID = setInterval(displayTimer,1000);// setInterval function returns unique id interval
+    counter = 0;
 }
 
 function stopTimer(){
